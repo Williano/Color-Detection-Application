@@ -46,7 +46,7 @@ Demo Video
 
 
 ## Technologies
-* [Python 3](https://www.python.org/)
+* [Python 3.8](https://www.python.org/)
 * [Opencv-Python](https://opencv.org/)
 * [Pandas](https://pandas.pydata.org/)
 * [NumPy](https://numpy.org/)
