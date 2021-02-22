@@ -1,5 +1,5 @@
 # Color-Detection-Application
-An application through which you can automatically get the name of a color by double clicking on them.
+An application through which you can automatically get the name of a color by double-clicking on them.
 
 
 ## Table of contents
@@ -19,7 +19,7 @@ An application through which you can automatically get the name of a color by do
 
 Color detection is the process of identifying the name of any color.  Color detection is important in identifying objects. Various image editing and drawing apps also use it as a tool.
 
-In this project, I built an application which accepts an image path and automatically get the name of the colors in the image by double clicking on them.
+In this project, I built an application which accepts an image path and automatically get the name of the colors in the image by double-clicking on them.
 The application has a data file that contains the color name and its values, it then calculate the distance from each color and find the shortest one.
 
 
@@ -56,7 +56,7 @@ The application has a data file that contains the color name and its values, it 
 
 ## Features
 
-* Detect colors by double clicking on the color in an image
+* Detect colors by double-clicking on the color in an image
 * Get color name
 * Get RGB values of colors 
 
@@ -115,7 +115,7 @@ To run this app, you will need to follow these 4 steps:
   
   #### 4. Testing application
   
-  - Double click on any part of the image to get the color name and RGB value
+  - Double-click on any part of the image to get the color name and RGB value
 
 
 ## Status
