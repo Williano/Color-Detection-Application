@@ -19,8 +19,9 @@ An application through which you can automatically get the name of a color by cl
 
 Color detection is the process of identifying the name of any color.  Color detection is important in identifying objects. Various image editing and drawing apps also use it as a tool.
 
-In this project, I built an application which accepts an image path and automatically get the name of the colors in the image by clicking on them.
+In this project, I built an application which accepts an image path and automatically get the name of the colors in the image by double clicking on them.
 The application has a data file that contains the color name and its values, it then calculate the distance from each color and find the shortest one.
+
 
 
 ## Screenshots
@@ -28,14 +29,29 @@ The application has a data file that contains the color name and its values, it 
  Running program
 :-------------------------:
 
+![cmd](https://user-images.githubusercontent.com/19711677/108757364-5e2e8b80-750f-11eb-957e-c301f5c6990d.PNG)
 
- Sample Output
+
+ Sample Output 1
 :-------------------------:
 
+![output1](https://user-images.githubusercontent.com/19711677/108757367-5ec72200-750f-11eb-8334-0012c77edf71.PNG)
 
-Demo Video
+
+ Sample Output 2
 :-------------------------:
 
+![output2](https://user-images.githubusercontent.com/19711677/108757383-64246c80-750f-11eb-9e52-0ec99e8d2cdf.PNG)
+
+ Sample Output 3
+:-------------------------:
+
+![output3](https://user-images.githubusercontent.com/19711677/108757396-6686c680-750f-11eb-92f4-2604366ad84b.PNG)
+
+ Sample Output 4
+:-------------------------:
+
+![output4](https://user-images.githubusercontent.com/19711677/108757386-65559980-750f-11eb-8c4a-15f1994e9259.PNG)
 
 
 ## Features
@@ -55,7 +71,7 @@ Demo Video
 
 ## Setup
 
-To run this app, you will need to follow these 3 steps:
+To run this app, you will need to follow these 4 steps:
 
 #### 1. Requirements
   - a Laptop
@@ -90,10 +106,16 @@ To run this app, you will need to follow these 3 steps:
   $ pipenv shell
 
   # Create database tables
-  (Color-Detection-Application-XXXX) $ python color_detection.py -i <add your image path here>
+  (Color-Detection-Application-XXXX) $ python color_detector.py -i <add your image path here>
+  
+  Example: python src/color_detector.py -i images/pietro-de-grandi.jpg
   
 
   ```
+  
+  #### 4. Testing application
+  
+  - Double click on any part of the image to get the color name and RGB value
 
 
 ## Status
