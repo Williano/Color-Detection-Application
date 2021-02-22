@@ -56,7 +56,7 @@ The application has a data file that contains the color name and its values, it 
 
 ## Features
 
-* Detect colors by clicking on the color in an image
+* Detect colors by double clicking on the color in an image
 * Get color name
 * Get RGB values of colors 
 
