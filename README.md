@@ -1,4 +1,4 @@
-# Color-Detection-Application
+# Color Detection Application
 An application through which you can automatically get the name of a color by double-clicking on them.
 
 
