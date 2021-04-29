@@ -1,12 +1,24 @@
+"""
+    Script: Color Detector or Color blind helper
+    Description: An application through which you can automatically get the name
+                 and R,G,B values of a color in an image by
+                 clicking on the color with your mouse.
+    Programmers: William K. Kwabla, Furkan Dinc
+"""
+
 # Import libraries
 import cv2
 import numpy as np
 import pandas as pd
 import argparse
 
-# Global variables
+# Check for user mouse click event
 clicked = False
+
+# store red, green, green, x and y coordinates
 red_color = green_color = blue_color = x_position = y_position = 0
+
+# store uploaded image by user
 global uploaded_image
 
 
@@ -21,7 +33,7 @@ def get_image_path_from_the_user() -> str:
     return image_path
 
 
-def read_image_with_opencv(image_path):
+def read_image_with_opencv(image_path) -> str:
 
     global uploaded_image
 
@@ -44,7 +56,7 @@ def get_color_dataset():
 
 
 # calculates minimum distance from all colors, get the most matching color and return it
-def get_color_name(RED, GREEN, BLUE, color_dataset):
+def get_color_name(RED, GREEN, BLUE, color_dataset) -> str:
 
     # Minimum distance from a color
     minimum_distance = 10000
@@ -62,11 +74,11 @@ def get_color_name(RED, GREEN, BLUE, color_dataset):
     return color_name
 
 
-# Gets x,y coordinates of mouse double click
-def draw_function(event, x , y, flags, param):
+# Gets x,y coordinates of mouse left or right button click
+def draw_function(event, x , y, flags, param) -> None:
 
-    # Check if the user has double clicked his mouse and get the x and y coordinates of the image
-    if event == cv2.EVENT_LBUTTONDBLCLK:
+    # Check if the user has clicked his mouse and get the x and y coordinates of the image
+    if event == cv2.EVENT_LBUTTONDOWN or event == cv2.EVENT_RBUTTONDOWN:
 
         global blue_color, green_color, red_color, x_position, y_position, clicked
 
@@ -77,7 +89,7 @@ def draw_function(event, x , y, flags, param):
 
         y_position = y
 
-        # Use the x,y coordinates of the mouse to extract the color the user double clicked and store
+        # Use the x,y coordinates of the mouse to extract the color the user clicked and store
         # it red, green and blue values
         blue_color, green_color, red_color = uploaded_image[y, x]
 
@@ -90,7 +102,7 @@ def draw_function(event, x , y, flags, param):
 
 
 
-def display_color_name_when_user_clicks_color_in_image(uploaded_image, color_dataset):
+def display_color_name_when_user_clicks_color_in_image(uploaded_image, color_dataset) -> None:
 
     global clicked
 
@@ -128,7 +140,6 @@ def display_color_name_when_user_clicks_color_in_image(uploaded_image, color_dat
 
 
 
-
 def main() -> None:
 
     # Get the image path from the user and store it in a variable for later use
@@ -143,13 +154,13 @@ def main() -> None:
     # Display the window and call the draw function
     cv2.namedWindow('image')
 
-    # Gets x,y coordinates of mouse double click and pass it to the draw function
+    # Gets x,y coordinates of mouse left or right button click and pass it to the draw function
     cv2.setMouseCallback('image', draw_function)
 
     # Display the color name when the user clicks color in the image loaded
     display_color_name_when_user_clicks_color_in_image(uploaded_image, color_dataset)
 
-
+# Call the main function if the file is not being imported as a module
 if __name__ == "__main__":
     main()
 
