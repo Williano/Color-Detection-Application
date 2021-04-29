@@ -1,5 +1,5 @@
 # Color Detection Application
-A python application through which you can automatically get the name of a color by double-clicking on them.
+A python application through which you can automatically get the name and R,G,B values of a color in an image by clicking on the color with your mouse.
 
 
 ## Table of contents
