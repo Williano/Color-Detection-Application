@@ -56,7 +56,7 @@ The application has a data file that contains the color name and its values, it 
 
 ## Features
 
-* Detect colors by double-clicking on the color in an image
+* Detect colors by clicking on the color in an image with your mouse
 * Get color name
 * Get RGB values of colors 
 
@@ -115,7 +115,7 @@ To run this app, you will need to follow these 4 steps:
   
   #### 4. Testing application
   
-  - Double-click on any part of the image to get the color name and RGB value
+  - Click on any part of the image to get the color name and RGB value
 
 
 ## Status
