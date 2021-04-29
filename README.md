@@ -19,7 +19,7 @@ A python application through which you can automatically get the name of a color
 
 Color detection is the process of identifying the name of any color.  Color detection is important in identifying objects. Various image editing and drawing apps also use it as a tool.
 
-In this project, I built an application which accepts an image path and automatically get the name of the colors in the image by double-clicking on them.
+In this project, I built an application which accepts an image path and automatically get the name of the colors in the image when the user presses his/her left or right mouse buttons on them.
 The application has a data file that contains the color name and its values, it then calculate the distance from each color and find the shortest one.
 
 
