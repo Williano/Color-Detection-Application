@@ -12,7 +12,7 @@ global uploaded_image
 
 def get_image_path_from_the_user() -> str:
 
-    # Creates argument parser to take image path from command line
+    # Creates argument parser to take image path from command line and return the image path
     argument_parser = argparse.ArgumentParser()
     argument_parser.add_argument('-i', '--image', required=True, help="Image Path")
     arguments = vars(argument_parser.parse_args())
@@ -25,6 +25,7 @@ def read_image_with_opencv(image_path):
 
     global uploaded_image
 
+    # Reads uploaded image from the path giving to it by the user and returns it
     uploaded_image = cv2.imread(image_path)
 
     return uploaded_image
@@ -32,44 +33,55 @@ def read_image_with_opencv(image_path):
 
 def get_color_dataset():
 
-    # Reads the csv file containing the colors and gives names to each column
+    # Column names for color dataset
     index =["color", "color_name", "hex", "RED", "GREEN", "BLUE"]
 
+    # Reads the csv file containing the colors and gives names to each column
     color_dataset = pd.read_csv('color-dataset/colors.csv', names=index, header=None)
 
+    # Return color dataset
     return color_dataset
 
 
-# calculates minimum distance from all colors and get the most matching color
+# calculates minimum distance from all colors, get the most matching color and return it
 def get_color_name(RED, GREEN, BLUE, color_dataset):
 
+    # Minimum distance from a color
     minimum_distance = 10000
 
+    # Iterates through the color dataset and gets the distance from all colors in the dataset
     for i in range( len(color_dataset) ):
         distance_from_all_colors = abs(RED - int(color_dataset.loc[i, "RED"])) + abs(GREEN - int(color_dataset.loc[i, "GREEN"])) + abs(BLUE - int(color_dataset.loc[i, "BLUE"]))
 
+        # calculates minimum distance from all colors and get the most matching color
         if( distance_from_all_colors <= minimum_distance):
             minimum_distance = distance_from_all_colors
             color_name = color_dataset.loc[i, "color_name"]
 
+    # Returns the color name
     return color_name
 
 
 # Gets x,y coordinates of mouse double click
 def draw_function(event, x , y, flags, param):
 
+    # Check if the user has double clicked his mouse and get the x and y coordinates of the image
     if event == cv2.EVENT_LBUTTONDBLCLK:
 
         global blue_color, green_color, red_color, x_position, y_position, clicked
 
+        # If there is a click event, extract the x and y coordinates
         clicked = True
 
         x_position = x
 
         y_position = y
 
+        # Use the x,y coordinates of the mouse to extract the color the user double clicked and store
+        # it red, green and blue values
         blue_color, green_color, red_color = uploaded_image[y, x]
 
+        # Convert the coordinates to integers and store them in the r,g,b variables to use for extracting of the color name
         blue_color = int(blue_color)
 
         green_color = int(green_color)
@@ -82,10 +94,15 @@ def display_color_name_when_user_clicks_color_in_image(uploaded_image, color_dat
 
     global clicked
 
+    # While the user has not closed the program, keep displaying the color names of
+    # the colors he/she double clicks on
     while(1):
 
+        # First show the image the user sent to the program to get the color names from
         cv2.imshow("image", uploaded_image)
 
+        # If the user double clicked on the image, get the image properties and call the necessary
+        # functions to get the color name.
         if (clicked):
 
             # cv2.rectangle(image, startpoint, endpoint, color, thickness)-1 fills entire rectangle
@@ -106,6 +123,8 @@ def display_color_name_when_user_clicks_color_in_image(uploaded_image, color_dat
         # Breaks the loop when user hits 'esc' key
         if cv2.waitKey(20) & 0xFF == 27:
             break
+
+    cv2.destroyAllWindows()
 
 
 
