@@ -105,7 +105,7 @@ To run this app, you will need to follow these 4 steps:
   # Activate the Pipenv shell
   $ pipenv shell
 
-  # Create database tables
+  # Run application
   (Color-Detection-Application-XXXX) $ python color_detector.py -i <add your image path here>
   
   Example: python src/color_detector.py -i images/pietro-de-grandi.jpg
