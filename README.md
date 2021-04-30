@@ -19,8 +19,7 @@ A python application through which you can automatically get the name and R,G,B 
 
 Color detection is the process of identifying the name of any color.  Color detection is important in identifying objects. Various image editing and drawing apps also use it as a tool.
 
-In this project, I built an application which accepts an image path and automatically get the name of the colors in the image when the user presses his/her left or right mouse buttons on them.
-The application has a data file that contains the color name and its values, it then calculate the distance from each color and find the shortest one.
+In this project, we built an application which accepts an image path and automatically get the name and R, G, B values of the colors in the image when the user presses left or right mouse buttons on the image. The application has a remote database that allows users to update the colors dataset with custom colors. The application gets the updated color dataset from the remote database which contains the color names and its values, it then calculates the distance from each color and finds the closest one.
 
 
 
@@ -56,6 +55,7 @@ The application has a data file that contains the color name and its values, it 
 
 ## Features
 
+* A remote database to allow users to add custom colors, delete, view and download colors.
 * Detect colors by clicking on the color in an image with your mouse
 * Get color name
 * Get RGB values of colors 
@@ -74,7 +74,7 @@ The application has a data file that contains the color name and its values, it 
 To run this app, you will need to follow these 4 steps:
 
 #### 1. Requirements
-  - a Laptop
+  - a Computer
 
   - Text Editor or IDE (eg. vscode, PyCharm)
 
