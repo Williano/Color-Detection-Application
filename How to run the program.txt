@@ -1,0 +1,48 @@
+
+## Setup
+
+To run this app, you will need to follow these 4 steps:
+
+#### 1. Requirements
+  - a Laptop
+
+  - Text Editor or IDE (eg. vscode, PyCharm)
+
+  - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) installed on your Laptop.
+  
+  - Command line (CMD) 
+
+
+#### 2. Install Python and Pipenv
+  - [Python3](https://www.python.org/downloads/)
+  
+
+  - [Pipenv](https://pipenv-es.readthedocs.io/es/stable/)
+
+#### 3. Local Setup and Running on Windows, Linux and Mac OS
+
+  ```
+  
+  # Clone this repository into the directory of your choice
+  $ git clone https://github.com/Williano/Color-Detection-Application.git
+
+  # Move into project folder
+  $ cd Color-Detection-Application
+
+  # Install from Pipfile
+  $ pipenv install
+
+  # Activate the Pipenv shell
+  $ pipenv shell
+
+  # Create database tables
+  (Color-Detection-Application-XXXX) $ python color_detector.py -i <add your image path here>
+  
+  Example: python src/color_detector.py -i images/pietro-de-grandi.jpg
+  
+
+  ```
+  
+  #### 4. Testing application
+  
+  - Click on any part of the image to get the color name and RGB value
