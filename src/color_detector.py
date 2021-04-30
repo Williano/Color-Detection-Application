@@ -11,6 +11,7 @@ import cv2
 import numpy as np
 import pandas as pd
 import argparse
+import requests
 
 # Check for user mouse click event
 clicked = False
@@ -43,10 +44,35 @@ def read_image_with_opencv(image_path) -> str:
     return uploaded_image
 
 
+def get_updated_colors_from_database():
+
+    # url for server containing colors
+    url = "https://multi-server-final.herokuapp.com/download"
+
+    # Gets the colors from the remote server
+    response = requests.get(url)
+
+    # check the status of the response from the server
+    if response.status_code != 200:
+        print("Failed to get data:", response.status_code)
+
+    else:
+        # Gets the colors from the url
+        url_content = response.content
+        # Creates a csv file and write the colors into it
+        colors_csv = open("color-dataset/colors.csv", 'wb')
+        colors_csv.write(url_content)
+        # Close the file
+        colors_csv.close()
+
+
 def get_color_dataset():
 
     # Column names for color dataset
     index =["color", "color_name", "hex", "RED", "GREEN", "BLUE"]
+
+    # update colors in the server
+    get_updated_colors_from_database()
 
     # Reads the csv file containing the colors and gives names to each column
     color_dataset = pd.read_csv('color-dataset/colors.csv', names=index, header=None)
