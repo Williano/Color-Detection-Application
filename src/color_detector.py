@@ -111,7 +111,7 @@ def display_color_name_when_user_clicks_color_in_image(uploaded_image, color_dat
     while(1):
 
         # First show the image the user sent to the program to get the color names from
-        cv2.imshow("image", uploaded_image)
+        cv2.imshow("Color Detection Application", uploaded_image)
 
         # If the user double clicked on the image, get the image properties and call the necessary
         # functions to get the color name.
@@ -152,10 +152,10 @@ def main() -> None:
     color_dataset = get_color_dataset()
 
     # Display the window and call the draw function
-    cv2.namedWindow('image')
+    cv2.namedWindow("Color Detection Application")
 
     # Gets x,y coordinates of mouse left or right button click and pass it to the draw function
-    cv2.setMouseCallback('image', draw_function)
+    cv2.setMouseCallback("Color Detection Application", draw_function)
 
     # Display the color name when the user clicks color in the image loaded
     display_color_name_when_user_clicks_color_in_image(uploaded_image, color_dataset)
