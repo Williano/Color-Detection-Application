@@ -4,6 +4,7 @@ A python application through which you can automatically get the name and R,G,B 
 
 ## Table of contents
 * [General info](#general-info)
+* [Remote Color Database](#remote-color-database)
 * [Screenshots](#screenshots)
 * [Features](#features)
 * [Technologies](#technologies)
@@ -21,6 +22,15 @@ Color detection is the process of identifying the name of any color.  Color dete
 
 In this project, we built an application which accepts an image path and automatically get the name and R, G, B values of the colors in the image when the user presses left or right mouse buttons on the image. The application has a remote database that allows users to update the colors dataset with custom colors. The application gets the updated color dataset from the remote database which contains the color names and its values, it then calculates the distance from each color and finds the closest one.
 
+
+## Remote Color Database
+
+* A user can see the list of the colors in the database.
+* A user can add a new color to the database.
+* A user can delete a color from the database.
+* The user can visit the link below to view, add and delete colors:
+  
+     [Remote Color Database](https://multi-server-final.herokuapp.com) 
 
 
 ## Screenshots
